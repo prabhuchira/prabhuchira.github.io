@@ -21,7 +21,7 @@ const projects = [
         name: "Covid tracker india Jquery",
         matter: "This application i have build when im learning jquery.This uses api.covid19india.org api to fetch all the covid cases in india.",
         github: "https://github.com/prabhuchira/covid-tracker-india-jquery",
-        image: "assets/images/project_images/flames.gif",
+        image: "assets/images/project_images/covid-tracker.gif",
         applink:"https://prabhuchira.github.io/covid-tracker-india-jquery/",
         apilink:"https://api.covid19india.org/",
         techUsed:
