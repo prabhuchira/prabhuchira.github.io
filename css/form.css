@@ -1,0 +1,40 @@
+.cinput{
+    font-size:16px;
+    color:grey;
+    width: 100%;
+    border:1px solid rgba(128, 128, 128, 0.418);
+    padding:10px;
+    /* margin-  left:30px;  */
+    border-radius: 4px;  
+    margin-bottom: 40px;
+    box-shadow: 0px 1px 0px 0px #0000003b;
+}
+
+label{
+    font-size:18px;
+    color:grey;   
+    font-family: "Roboto",sans-serif;
+}
+
+
+button[type="submit"]{
+   background-color:rgb(68, 68, 68);
+   color:white;
+   padding:10px 20px;
+   font-size:20px;
+   font-family: "Lato",sans-serif;
+   border-radius: 5px;
+   border:2px solid rgb(68, 68, 68) ;
+   
+}
+
+button[type="submit"]:hover{
+    background-color: wheat;
+    color:brown;
+    transition:background-color ease-in 0.2s ;
+    border:2px solid wheat;
+}
+
+.my-form{
+    margin-top:50px;
+}

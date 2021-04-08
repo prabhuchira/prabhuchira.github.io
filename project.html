@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="./css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ==" crossorigin="anonymous" /> -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/brands.css"
+        integrity="sha384-IiIL1/ODJBRTrDTFk/pW8j0DUI5/z9m1KYsTm/RjZTNV8RHLGZXkUDwgRRbbQ+Jh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"
+        integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css"
+        integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
+
+
+
+
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/form.css" />
+    <style>
+        #home {
+            /* width: 200px; */
+            position: absolute;
+        }
+
+
+    
+
+            @media screen and (max-width:800px) {
+
+                .footer-cm a {
+                display: inline-table;
+                margin-top: 20px;
+            }
+
+                #spacer {
+                    display: none;
+                }
+
+                .back-button{
+                    margin-left:5px;
+                }
+
+                .my-form{
+                    padding:0px 30px;
+                    margin-top:40px;
+                }
+
+                #projectImage{
+                    width: 100%;
+                }
+            }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <!---Who Am I-->
+
+
+
+    <div style="height:10px;background-color:white;"></div>
+
+
+
+    <div class="my-form" style="margin-bottom:30px">
+
+        <div class="container" style="font-size: 30px;font-family: Roboto,sans-serif;">
+            <!-- <p>Project: <b id="projectDrone"></b> </p> -->
+            <i class="fas fa-arrow-left back-button" style="cursor: pointer;margin-bottom: 30px;"
+                onclick="window.location.href='/index.html#projectContainer'"></i>
+        </div>
+        <div class="container ">
+            <h1 class="heading" style="font-family:Lato;font-size:35px;letter-spacing: 0;">
+                <p style="font-size: 20px;">Project:  </p>
+                <b id="projectDrone"></b>
+            </h1>
+            <hr />
+
+
+            <div class="matter" id="matter"></div>
+            <div style="text-align: center;">
+
+                <img id="projectImage" src="assets/images/project_images/calculator-react.gif">
+            </div>
+
+
+            <div>
+                <br>
+                <h3>Made Using:</h3>
+                <br />
+
+                <ul id="tech-used" class="tech-used">
+                    <!-- <li>
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </li>
+                    <li>
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS</span>
+                    </li>
+                    <li>Windows</li> -->
+                </ul>
+
+                <br>
+                <h3>Github:</h3>
+                <br />
+                <div>
+                    <a target="_blank" href="" id="projectg-link"></a>
+                </div>
+
+
+                <br>
+                <div style="display: none;" id="app-link-container">
+                    <h3>App:</h3>
+                    <br />
+                    <div>
+                        <a target="_blank" href="" id="app-link"></a>
+                    </div>
+                </div>
+
+                <br>
+                <div style="display: none;" id="api-link-container">
+                    <h3>Third Party API:</h3>
+                    <br />
+                    <div>
+                        <a target="_blank" href="" id="api-link"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- <div style="height:100px;background-color:#e6e6e6;"></div> -->
+    <!--Footer-->
+
+
+
+    <div class="footer-cm">
+        <h1>STAY CONNECTED</h1>
+        <div style="margin-top:70px"></div>
+
+
+        <a target="_blank" href="https://www.instagram.com/peteragnus/"><i class="fab fa-instagram" ></i></a>
+        <!-- <a href="#"><i class="fab fa-whatsapp   "></i></a> -->
+        <a target="_blank" href="https://www.linkedin.com/in/prabhu-kumar-18748972/"><i class="fab fa-linkedin"></i></a>
+        <a target="_blank" href="mailto:prabhuchira@gmail.com"><i class="fab fa-google"></i></a>
+        <a target="_blank" href="https://github.com/prabhuchira"><i class="fab fa-github"></i></a>
+        <div class="copyright">
+            Handcrafted by me &#xa9 prabhuchira
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/p5.min.js"></script>
+    <script src="./js/vanta.trunk.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/brands.min.js"></script>
+
+
+
+    <script src="./js/project.js"> </script>
+    <script>
+
+        document.getElementById("home-button").addEventListener("click", () => {
+            window.location.href = "/index.html"
+        })
+
+        console.log("WIN")
+
+     
+    </script>
+
+    <!-- </script> -->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="./css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ==" crossorigin="anonymous" /> -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/brands.css"
+        integrity="sha384-IiIL1/ODJBRTrDTFk/pW8j0DUI5/z9m1KYsTm/RjZTNV8RHLGZXkUDwgRRbbQ+Jh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"
+        integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css"
+        integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
+
+
+
+
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/form.css" />
+    <style>
+        #home {
+            /* width: 200px; */
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <!---Who Am I-->
+
+
+
+    <div style="height:80px;background-color:white;"></div>
+    <div id="home-button" style="width:90%;text-align: end; cursor: pointer;">
+        <i style="font-size:30px" class="fa fa-times"> </i>
+    </div>
+
+
+    <div class="my-form" style="margin-bottom:30px">
+        <div class="container" style="font-size: 30px;font-family: Roboto,sans-serif;">
+            <p>To: <b>prabhuchira@gmail.com</b></p>
+        </div>
+        <div class="container ">
+            <h1 class="heading" style="font-family:Lato;font-size:35px;letter-spacing: 0;">I’m excited to learn about your project. Ready to get started?</h1>
+            <hr />
+
+
+            <div style="display: flex;">
+
+                <div style="flex:1;margin-right: 30px;">
+                    <label>Name:</label>
+                    <input class="cinput" name="name" type="text">
+                </div>
+
+
+                <div style="flex:1">
+                    <label>Email:</label>
+                    <input class="cinput" name="email" type="text">
+                </div>
+
+            </div>
+
+            <div style="display: flex;">
+
+                <div style="flex:1;margin-right: 30px;">
+                    <label>Type of Project:</label>
+                    <select class="cinput">
+                        <option value="responsive_design"> Responsive Design</option>
+                        <option value="web_app"> Web App</option>
+                        <option value="mobile_app">Mobile App</option>
+                    </select>
+                </div>
+
+
+                <div style="flex:1">
+                    <label>Budget:</label>
+                    <select class="cinput">
+                        <option value="3000-5000">3,000-5,000</option>
+                        <option value="6000-10000">6,000-10,000</option>
+                        <option value="12000-20000">12,000-20,000</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <label>Additional Details:</label>
+            <!-- <input class="cinput" name="name"  type="text">  -->
+            <textarea class="cinput" rows="5"> </textarea>
+
+            <!-- <hr /> -->
+
+            <div style="text-align: center;">
+            <button type="submit">
+                Submit
+            </button>
+
+        </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- <div style="height:100px;background-color:#e6e6e6;"></div> -->
+    <!--Footer-->
+
+
+
+    <div class="footer-cm">
+        <h1>STAY CONNECTED</h1>
+        <div style="margin-top:70px"></div>
+
+
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp   "></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-google"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+
+        <div class="copyright">
+            Handcrafted by me &#xa9 prabhuchira
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/p5.min.js"></script>
+    <script src="./js/vanta.trunk.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/brands.min.js"></script>
+
+
+
+    <!-- <script src="./js/main.js"> </script> -->
+    <script>
+        
+  document.getElementById("home-button").addEventListener("click",()=>{
+      window.location.href="/index.html"
+  })
+    </script>
+    <script>
+        VANTA.TRUNK({
+
+            el: "#home",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            // minHeight: 100.00,
+            // minWidth: 100.00,
+            // maxHeight:100.00,
+            // maxWidth:100.00,
+            scale: 0.50,
+            scaleMobile: 0,
+            color: 0x0,
+            backgroundColor: 0xdcdcdc,
+            chaos: 2,
+            zoom: 0
+
+        })
+    </script>
+    </script>
+
+
+
+</body>
+
+</html>
