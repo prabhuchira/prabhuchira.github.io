@@ -43,14 +43,18 @@
 
 
 
-    <div style="height:80px;background-color:white;"></div>
-    <div id="home-button" style="width:90%;text-align: end; cursor: pointer;">
-        <i style="font-size:30px" class="fa fa-times"> </i>
-    </div>
-
+    <div style="height:80px;background-color:white;" id="spacer"></div>
+  
 
     <div class="my-form" style="margin-bottom:30px">
-        <div class="container" style="font-size: 30px;font-family: Roboto,sans-serif;">
+        
+    <div class="container" style="font-size: 30px;font-family: Roboto,sans-serif;">
+        <!-- <p>Project: <b id="projectDrone"></b> </p> -->
+        <i class="fas fa-arrow-left back-button" style="cursor: pointer;margin-bottom: 30px;"
+            onclick="window.location.href='/index.html#projectContainer'"></i>
+    </div>
+        <div class="container" id="recepient" style="font-size: 30px;font-family: Roboto,sans-serif;">
+            
             <p>To: <b>prabhuchira@gmail.com</b></p>
         </div>
         <div class="container ">
@@ -58,7 +62,7 @@
             <hr />
 
 
-            <div style="display: flex;">
+            <div style="display: flex;" id="name-field">
 
                 <div style="flex:1;margin-right: 30px;">
                     <label>Name:</label>
@@ -127,21 +131,31 @@
 
 
 
+  
     <div class="footer-cm">
         <h1>STAY CONNECTED</h1>
-        <div style="margin-top:70px"></div>
+        <div style="margin-top:70px" id="spacer"></div>
+
+        <div style="display: flex;justify-content: center;">
+        <a target="_blank" href="https://www.instagram.com/peteragnus/"><i class="fab fa-instagram"></i></a>
+        <!-- <a href="#"><i class="fab fa-whatsapp   "></i></a> -->
+        <a target="_blank" href="https://www.linkedin.com/in/prabhu-kumar-18748972/"><i class="fab fa-linkedin"></i></a>
+
+    </div>
 
 
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-whatsapp   "></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-google"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
+        <div style="display: flex;justify-content: center;margin-top:25px"> 
+        <a target="_blank" href="mailto:prabhuchira@gmail.com"><i class="fab fa-google"></i></a>
 
+
+
+        <a target="_blank" href="https://github.com/prabhuchira"><i class="fab fa-github"></i></a>
+    </div>
         <div class="copyright">
             Handcrafted by me &#xa9 prabhuchira
         </div>
     </div>
+
 
 
 

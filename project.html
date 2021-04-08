@@ -42,6 +42,12 @@
                 margin-top: 20px;
             }
 
+
+            .link{
+                font-size:13px  !important;
+                text-align: justify;
+            }
+
                 #spacer {
                     display: none;
                 }
@@ -117,17 +123,18 @@
                 <br>
                 <h3>Github:</h3>
                 <br />
-                <div>
-                    <a target="_blank" href="" id="projectg-link"></a>
+                <div
+                style="width: 100%;" >
+                    <a target="_blank" class="link" href="" id="projectg-link"></a>
                 </div>
 
 
                 <br>
-                <div style="display: none;" id="app-link-container">
+                <div style="display: none;" class="link" id="app-link-container">
                     <h3>App:</h3>
                     <br />
                     <div>
-                        <a target="_blank" href="" id="app-link"></a>
+                        <a target="_blank" class="link" href="" id="app-link"></a>
                     </div>
                 </div>
 
@@ -136,7 +143,7 @@
                     <h3>Third Party API:</h3>
                     <br />
                     <div>
-                        <a target="_blank" href="" id="api-link"></a>
+                        <a target="_blank" class="link" href="" id="api-link"></a>
                     </div>
                 </div>
             </div>
@@ -154,21 +161,30 @@
     <!--Footer-->
 
 
-
     <div class="footer-cm">
         <h1>STAY CONNECTED</h1>
-        <div style="margin-top:70px"></div>
+        <div style="margin-top:70px" id="spacer"></div>
 
-
-        <a target="_blank" href="https://www.instagram.com/peteragnus/"><i class="fab fa-instagram" ></i></a>
+        <div style="display: flex;justify-content: center;">
+        <a target="_blank" href="https://www.instagram.com/peteragnus/"><i class="fab fa-instagram"></i></a>
         <!-- <a href="#"><i class="fab fa-whatsapp   "></i></a> -->
         <a target="_blank" href="https://www.linkedin.com/in/prabhu-kumar-18748972/"><i class="fab fa-linkedin"></i></a>
+
+    </div>
+
+
+        <div style="display: flex;justify-content: center;margin-top:25px"> 
         <a target="_blank" href="mailto:prabhuchira@gmail.com"><i class="fab fa-google"></i></a>
+
+
+
         <a target="_blank" href="https://github.com/prabhuchira"><i class="fab fa-github"></i></a>
+    </div>
         <div class="copyright">
             Handcrafted by me &#xa9 prabhuchira
         </div>
     </div>
+
 
 
 

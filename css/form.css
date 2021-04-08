@@ -37,4 +37,35 @@ button[type="submit"]:hover{
 
 .my-form{
     margin-top:50px;
+    padding:30px;
+}
+
+@media screen and (max-width:800px) {
+
+    .my-form{
+        margin-top:20px;
+        padding:30px;
+    }
+    
+    #recepient{
+        font-size:20px !important;
+    }
+
+    .container .heading{
+        font-size:20px !important;
+    }
+
+    #name-field{
+        flex-direction: column;
+    }
+    #spacer{
+        display: none;
+    }
+    .footer-cm{
+        padding:10px;
+    }
+
+    .footer-cm h1{
+        margin-bottom:20px;
+    }
 }
