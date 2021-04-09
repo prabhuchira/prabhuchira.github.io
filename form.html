@@ -31,6 +31,17 @@
             /* width: 200px; */
             position: absolute;
         }
+
+        @media screen and (max-width:800px) {
+          .form-flex{
+              display: block !important;
+              margin:auto !important;
+          }
+
+          .form-flex >div{
+            margin-right: 0px !important;
+          }
+        }   
     </style>
 </head>
 
@@ -57,12 +68,14 @@
             
             <p>To: <b>prabhuchira@gmail.com</b></p>
         </div>
+
+        <form action="https://getform.io/f/8920382a-0580-4561-bb1e-bd6cdaaf15f4" method="POST">
         <div class="container ">
             <h1 class="heading" style="font-family:Lato;font-size:35px;letter-spacing: 0;">I’m excited to learn about your project. Ready to get started?</h1>
             <hr />
 
 
-            <div style="display: flex;" id="name-field">
+            <div class="form-flex" style="display: flex;" id="name-field">
 
                 <div style="flex:1;margin-right: 30px;">
                     <label>Name:</label>
@@ -70,18 +83,18 @@
                 </div>
 
 
-                <div style="flex:1">
+                <div class="form-flex" style="flex:1">
                     <label>Email:</label>
                     <input class="cinput" name="email" type="text">
                 </div>
 
             </div>
 
-            <div style="display: flex;">
+            <div class="form-flex" style="display: flex;">
 
                 <div style="flex:1;margin-right: 30px;">
                     <label>Type of Project:</label>
-                    <select class="cinput">
+                    <select class="cinput" name="project-type">
                         <option value="responsive_design"> Responsive Design</option>
                         <option value="web_app"> Web App</option>
                         <option value="mobile_app">Mobile App</option>
@@ -89,21 +102,33 @@
                 </div>
 
 
-                <div style="flex:1">
+                <div style="flex:1"> 
+                    
                     <label>Budget:</label>
-                    <select class="cinput">
-                        <option value="3000-5000">3,000-5,000</option>
-                        <option value="6000-10000">6,000-10,000</option>
-                        <option value="12000-20000">12,000-20,000</option>
+                    <select class="cinput" name="price-range">
+                        <option value="3,000-5,000">3,000&#8377;-5,000&#8377;</option>
+                        <option value="6,000-10,000">6,000&#8377;-10,000&#8377;</option>
+                        <option value="12,000-20,000">12,000&#8377;-20,000&#8377;</option>
                     </select>
                 </div>
 
+              
+
             </div>
 
-
-            <label>Additional Details:</label>
-            <!-- <input class="cinput" name="name"  type="text">  -->
-            <textarea class="cinput" rows="5"> </textarea>
+            <div class="form-flex" style="display:flex">
+                <div style="flex:1;margin-right: 30px;">
+                    <label>Phone No:</label>
+                    
+                    <input class="cinput" name="phone_no" type="tel">
+                </div>
+                <div style="flex:1">
+                    <label>Additional Details:</label>
+                    <!-- <input class="cinput" name="name"  type="text">  -->
+                    <textarea class="cinput" name="message" rows="5"> </textarea>
+                </div>
+            </div>
+       
 
             <!-- <hr /> -->
 
@@ -118,6 +143,7 @@
 
 
         </div>
+    </form>
     </div>
 
 

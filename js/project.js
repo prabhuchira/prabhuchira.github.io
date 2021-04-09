@@ -109,6 +109,7 @@ console.log(project)
 const projectDOM = (i) => {
     document.getElementById("projectDrone").append(i.name);
     document.getElementById("projectImage").src = i.image;
+    document.getElementById("projectImage").style.display="block";
     document.getElementById("matter").append(i.matter)
 
     i.techUsed.map((i)=>{

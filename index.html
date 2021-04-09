@@ -43,6 +43,10 @@
         }
 
         @media screen and (max-width:800px) {
+            #myElement2
+            {
+                margin-bottom: 30px;
+            }
             #projectContainer{
                 padding-bottom:50px ;
             }
@@ -151,7 +155,11 @@
             }
 
             .box{
-                height: 400px;
+                height: 550px;
+            }
+
+            #code-logo{
+                font-size:130px;
             }
 
         }
@@ -592,9 +600,11 @@
 
         new TypeIt('#myElement2', {
             // strings: "This is what will be typed!"
-            speed: 50,
+            speed: 80,
+            waitUntilVisible: true,
             loop: true
-        }).go();
+        }).delete("prabhuchira@gmail.com".length) .type('+91 9618723780')
+        .go();
     </script>
 
 
