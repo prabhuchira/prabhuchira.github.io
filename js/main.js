@@ -15,7 +15,7 @@
             {lang: "Jquery", perc: 100,iconName:"fab fa-node-js"},
             {lang: "React", perc: 90,iconName:"fab fa-react"},
             {lang: "R-Native", perc: 90,iconName:"fab fa-react"},
-            {lang: "R-Native", perc: 90,iconName:"fab fa-react"},
+           
             {lang: "NodeJS", perc: 80,iconName:"fab fa-node"},
             {lang: "MongoDB", perc: 70,iconName:"fas fa-database"},
             {lang: "Flutter", perc: 95,iconName:"fab fa-gitter"},
