@@ -23,7 +23,7 @@
 
         ]
 
-
+        document.querySelector('#code-logo').append("</>")
         data.forEach(function (i) {
             const outerDiv = document.createElement("div");
             outerDiv.style.display = "flex";
@@ -177,4 +177,3 @@ $('.git-btn').on('click', function (e) {
 
 
 
-document.querySelector('#code-logo').append("</>")
