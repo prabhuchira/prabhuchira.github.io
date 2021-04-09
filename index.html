@@ -43,6 +43,17 @@
         }
 
         @media screen and (max-width:800px) {
+            .add-custom-shadow{
+    background:rgb(220, 220, 220);
+    background-image: linear-gradient(rgb(220, 220, 220),rgb(220, 220, 220)) ,url("./../assets/images/bg.gif");
+    background-blend-mode: soft-light;
+    /* position: relative; */
+    /* height: 400px; */
+}
+
+
+
+
             #myElement2
             {
                 margin-bottom: 30px;
@@ -592,19 +603,31 @@
         })
     </script>
     <script>
-        new TypeIt('#myElement', {
+      
+        const mainInst=new TypeIt('#myElement', {
             // strings: "This is what will be typed!"
             speed: 50,
+            loop:window.innerWidth > 800?false:true
+        }).pause(2000).go();
 
-        }).go();
-
-        new TypeIt('#myElement2', {
+        const instance = new TypeIt('#myElement2', {
             // strings: "This is what will be typed!"
             speed: 80,
             waitUntilVisible: true,
             loop: true
         }).delete("prabhuchira@gmail.com".length) .type('+91 9618723780')
         .go();
+
+     
+            if(window.innerWidth < 800){
+                instance.reset();
+                document.getElementById("myElement2").append("prabhuchira@gmail.com");
+                mainInst.loop = true;
+                instance.destroy();
+            }
+            // instance.destroy();
+       
+        
     </script>
 
 

@@ -4,12 +4,26 @@
 
 .jumbotron {
     background: rgb(220, 220, 220);
+   
+
 }
+
+.add-custom-shadow{
+    background:rgb(220, 220, 220);
+
+    /* position: relative; */
+    /* height: 400px; */
+}
+
+
+
 
 .box {
     height: 600px;
-    background-color: rgb(220, 220, 220);
+    /* background-color: rgb(220, 220, 220); */
 }
+
+
 
 .name-info {
     display: flex;
