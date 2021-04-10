@@ -42,12 +42,30 @@
             display: none;
         }
 
+        .add-custom-shadow{
+    background:rgb(220, 220, 220);
+    background-image: url("./../assets/images/bg2.png");
+        }
+
+        #defaultCanvas0{
+            background:none  !important;
+        }
+
+
         @media screen and (max-width:800px) {
+
+            .btn-dr{
+                margin-top: 20px;
+            }
+
+            .profile-pic{
+                border:none;
+            }
             .add-custom-shadow{
     background:rgb(220, 220, 220);
-    background-image: linear-gradient(rgb(220, 220, 220),rgb(220, 220, 220)) ,url("./../assets/images/bg2.png");
-    background-blend-mode: soft-light;
-    background-size: cover;
+    background-image: url("./../assets/images/bg2.png");
+    /* background-blend-mode: soft-light; */
+    /* background-size: cover; */
     /* background-attachment: fixed; */
     /* position: relative; */
     /* height: 400px; */
@@ -88,7 +106,7 @@
 
             .add-custom-shadow {
                 box-shadow: inset 3px 0px 20px 0px #80808078;
-                background-attachment: fixed;
+                /* background-attachment: fixed; */
                 padding-bottom: 162px;
             }
 
@@ -268,6 +286,11 @@
                     <button class="btn btn-default btn-lg btn-cm git-btn">
                         <a href="#projectContainer" class="fab fa-github soc-icons"></a>
                         <span class="github-text"> Check Out My Projects</span>
+                    </button>
+
+                    <button class="btn btn-default btn-lg btn-dr"  onclick="window.open('./assets/resume.pdf')">
+                        <a href="./assets/resume.pdf" download class="fas fa-file-pdf soc-icons" style="color:black"></a>
+                        <span class="github-text">&nbsp;Download  Resume &nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </button>
 
 
