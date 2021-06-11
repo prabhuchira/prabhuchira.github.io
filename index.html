@@ -33,10 +33,6 @@
 
         }
 
-        #home2 {
-            position: relative;
-            display: none;
-        }
 
         #profile-image-sm {
             display: none;
@@ -51,13 +47,33 @@
             background:none  !important;
         }
 
+        @media screen and (max-width:1690px) {
+.btn-dr{
+                margin-top:15px;
+                /* margin-left:0px !important  ; */
+            }
+        }
+
+
+        @media screen and (max-width:1060px) {
+            #home {
+                display: none;
+            }
+
+            .btn-dr{
+                margin-top:0px !important;
+            }
+        }
+
+        @media screen and (max-width:570px){
+            .btn-dr{
+                margin-top: 10px !important;
+            }
+        }
 
         @media screen and (max-width:800px) {
 
-            .btn-dr{
-                margin-top: 20px;
-                margin-left:0px !important  ;
-            }
+            
 
             .profile-pic{
                 border:none;
@@ -88,22 +104,12 @@
                 height:800px;
             }
 
-            #home {
-                display: none;
-            }
+          
             .navbar-toggle{
                 display: none;
             }
-            /* #home2 {
-                display: block;
-                height: 400px;
-            }
-
-            #home2 canvas {
-                position: relative !important;
-                height: 500px !important;
-                background-color: green;
-            } */
+          
+        
 
             .add-custom-shadow {
                 box-shadow: inset 3px 0px 20px 0px #80808078;
@@ -194,7 +200,12 @@
                 font-size:130px;
             }
 
+            
+
         }
+
+    
+        
     </style>
 </head>
 
@@ -256,9 +267,9 @@
 
     <div class="jumbotron add-custom-shadow">
         <div class="container-fluid">
-            <div>
+            <!-- <div>
                 <div class="" id="home2"></div>
-            </div>
+            </div> -->
             <div class="col-md-4 box name-info">
                 <!-- <div>
                     <img src="assets/images/profile.jpeg" alt="..." class="img-circle profile">
@@ -609,24 +620,7 @@
 
         })
 
-        VANTA.TRUNK({
-
-            el: "#home2",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 10.00,
-            minWidth: 200.00,
-            // maxWidth:100.00,
-            scale: 0,
-            scaleMobile: 1,
-            spacing: -1,
-            color: 0x0,
-            backgroundColor: 0xdcdcdc,
-            chaos: 2,
-            zoom: 1
-
-        })
+        
     </script>
     <script>
       
@@ -636,21 +630,21 @@
             loop:window.innerWidth > 800?false:true
         }).pause(2000).go();
 
-        const instance = new TypeIt('#myElement2', {
-            // strings: "This is what will be typed!"
-            speed: 80,
-            waitUntilVisible: true,
-            loop: true
-        }).delete("prabhuchira@gmail.com".length) .type('+91 9618723780')
-        .go();
+        // const instance = new TypeIt('#myElement2', {
+        //     // strings: "This is what will be typed!"
+        //     speed: 80,
+        //     waitUntilVisible: true,
+        //     loop: true
+        // }).delete("prabhuchira@gmail.com".length) .type('+91 9618723780')
+        // .go();
 
      
-            if(window.innerWidth < 800){
-                instance.reset();
-                document.getElementById("myElement2").append("prabhuchira@gmail.com");
-                mainInst.loop = true;
-                instance.destroy();
-            }
+        //     if(window.innerWidth < 800){
+        //         instance.reset();
+        //         document.getElementById("myElement2").append("prabhuchira@gmail.com");
+        //         mainInst.loop = true;
+        //         instance.destroy();
+        //     }
             // instance.destroy();
        
         
