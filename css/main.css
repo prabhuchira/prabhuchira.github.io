@@ -402,3 +402,13 @@ h3{
 /* .btn-dr{
     margin-left: 20px !important;
 } */
+
+.one{
+    float:right;
+}
+
+@media screen and (min-width:746px) {
+    .one{
+        display: none;
+    }
+}

@@ -3,6 +3,29 @@
 
 const projects = [
     {
+        query: "digitalSaloon",
+        name: "Digital Saloon",
+        matter: "This application i have build with React-Native. This project got selected for IBM NASSCOM Hackathon 2020 for the title 'Crack the COVID 2019'.",
+        github: "https://github.com/homeSaloon",
+        image: "assets/images/project_images/digital-saloon.gif",
+        // applink:"https://prabhuchira.github.io/covid-tracker-india-jquery/",
+        // apilink:"https://api.covid19india.org/",
+        techUsed:
+        [
+            {iconName: "fab fa-html5",techname:"HTML"},
+            {iconName: "fab fa-css3-alt",techname:"CSS"},
+            {iconName: "fab fa-js",techname:"Javascript"},
+            {iconName: "fab fa-react",techname:"React-Native"},
+            {iconName: "fab fa-react",techname:"Redux"},
+            {iconName: "fas fa-map-marker-alt",techname:"Google Maps"},
+            {iconName: "fab fa-node",techname:"NodeJS"},
+            {iconName: "fas fa-database",techname:"MongoDB"},
+            {iconName: "fab fa-js",techname:"Express JS"},
+
+        ]
+
+    },
+    {
         query: "calculator",
         name: "React Calculator",
         matter: "When learning React I have made this application what makes it differs from other calculator applications is its not gonna work like 'press 1 for addition,press 2 for subtraction' it just works out of the box.User can see his history etc.?",
@@ -32,29 +55,7 @@ const projects = [
         ]
 
     },
-    {
-        query: "digitalSaloon",
-        name: "Digital Saloon",
-        matter: "This application i have build with React-Native. This project got selected for IBM NASSCOM Hackathon 2020 for the title 'Crack the COVID 2019'.",
-        github: "https://github.com/homeSaloon",
-        image: "assets/images/project_images/digital-saloon.gif",
-        // applink:"https://prabhuchira.github.io/covid-tracker-india-jquery/",
-        // apilink:"https://api.covid19india.org/",
-        techUsed:
-        [
-            {iconName: "fab fa-html5",techname:"HTML"},
-            {iconName: "fab fa-css3-alt",techname:"CSS"},
-            {iconName: "fab fa-js",techname:"Javascript"},
-            {iconName: "fab fa-react",techname:"React-Native"},
-            {iconName: "fab fa-react",techname:"Redux"},
-            {iconName: "fas fa-map-marker-alt",techname:"Google Maps"},
-            {iconName: "fab fa-node",techname:"NodeJS"},
-            {iconName: "fas fa-database",techname:"MongoDB"},
-            {iconName: "fab fa-js",techname:"Express JS"},
-
-        ]
-
-    },
+    
     {
         query: "level",
         name: "Level - Todo App",
