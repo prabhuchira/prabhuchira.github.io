@@ -75,8 +75,8 @@
 
 .github-text {
     margin-left: 10px;
-    font-size: 16px;
-    font-family: monospace;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
 }
 
@@ -94,7 +94,7 @@ filter: grayscale(100%);
 }
 
 .add-custom-shadow{
-    box-shadow: inset 3px 0px 20px 0px #80808078;
+    /* box-shadow: inset 3px 0px 20px 0px #80808078; */
     background-attachment: fixed;
     padding-bottom: 300px;
 }
