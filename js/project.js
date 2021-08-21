@@ -94,6 +94,24 @@ const projects = [
         ]
 
     },
+    {
+        query: "jntuh_track",
+        name: "JNTUH Track",
+        matter: "Flames is a relationship calculating algorithm famous between the youngsters. At the time of graduation everyone might heard about this and many of them tried out this secretly. Some took this as very serious also. So what FLAMES stance for?",
+        github: "https://github.com/prabhuchira/flames",
+        image: "assets/images/project_images/flames.gif",
+        // applink:"https://prabhuchira.github.io/covid-tracker-india-jquery/",
+        // apilink:"https://api.covid19india.org/",
+        techUsed:
+        [
+            {iconName: "fab fa-flutter",techname:"HTML"},
+            {iconName: "fab fa-css3-alt",techname:"CSS"},
+            {iconName: "fab fa-js",techname:"Javascript"},
+           
+
+        ]
+
+    },
 
 
 
