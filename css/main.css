@@ -62,7 +62,7 @@
 .btn-dr{
     background-color: white;
     color:#353535  !important;
-    box-shadow: 1px 2px black;
+    /* box-shadow: 1px 2px black; */
 
 }
 
@@ -85,7 +85,9 @@
 }
 
 .main-heading{
-    font-family: 'Roboto', sans-serif;
+   
+    font-family:'Rancho' !important; 
+    color:white !important;/* font-family: 'Roboto', sans-serif; */
 }
 
 .profile{
@@ -116,7 +118,7 @@ filter: grayscale(100%);
 
 .aboutMe .heading{
     text-align: center;
-    font-family:"Roboto",sans-serif;
+    font-family:"Rancho",sans-serif;
     font-size: 45px;
     color: #868686;
     /* margin:50px 0px; */
@@ -393,10 +395,12 @@ h3{
 
 
 #code-logo{
-    font-size:80px;
+    font-size:100px;
     margin-top:30px;
     margin-bottom:30px;
+    color: #ffffffbf;
 }
+
 
 
 /* .btn-dr{
@@ -411,4 +415,8 @@ h3{
     .one{
         display: none;
     }
+}
+
+.navbar-default .navbar-nav>li>a{
+    color:#cdcdcd;
 }

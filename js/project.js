@@ -3,6 +3,24 @@
 
 const projects = [
     {
+        query: "jntuh_track",
+        name:  "JNTUH Track",
+        matter: "This app allows you to calculate percentage,CGPA,SGPA for R16/R18 Results i.e. BTech only.Only Applicable for CSE,ECE,EEE,IT,CIVIL,AE,ME which tracks all the academic percentage of semesters that you will enter. The values are automatically updated i.e. CGPA,Percentage,SGPA.",
+        // github: "https://github.com/homeSaloon",
+        image: "assets/images/project_images/jntuh_track.png",
+        applink:"https://play.google.com/store/apps/details?id=com.dark_everest.jntuh_track",
+        // apilink:"https://api.covid19india.org/",
+        techUsed:
+        [
+            {iconName: "fab fa-google",techname:"Flutter"},
+            {iconName: "fab fa-google",techname:"Firebase"},
+            {iconName: "fab fa-google",techname:"Admob"},
+          
+
+        ]
+
+    },
+    {
         query: "digitalSaloon",
         name: "Digital Saloon",
         matter: "This application i have build with React-Native. This project got selected for IBM NASSCOM Hackathon 2020 for the title 'Crack the COVID 2019'.",
@@ -94,24 +112,7 @@ const projects = [
         ]
 
     },
-    {
-        query: "jntuh_track",
-        name: "JNTUH Track",
-        matter: "Flames is a relationship calculating algorithm famous between the youngsters. At the time of graduation everyone might heard about this and many of them tried out this secretly. Some took this as very serious also. So what FLAMES stance for?",
-        github: "https://github.com/prabhuchira/flames",
-        image: "assets/images/project_images/flames.gif",
-        // applink:"https://prabhuchira.github.io/covid-tracker-india-jquery/",
-        // apilink:"https://api.covid19india.org/",
-        techUsed:
-        [
-            {iconName: "fab fa-flutter",techname:"HTML"},
-            {iconName: "fab fa-css3-alt",techname:"CSS"},
-            {iconName: "fab fa-js",techname:"Javascript"},
-           
-
-        ]
-
-    },
+   
 
 
 
@@ -145,10 +146,14 @@ const projectDOM = (i) => {
         document.getElementById("tech-used").append(li)
     })
    
-    document.getElementById("projectg-link").href=i.github;
-    document.getElementById("projectg-link").innerText=i.github;
-    document.getElementById("projectg-link").style.fontSize="20px"
-
+    if(i.github){
+        document.getElementById("github-link").style.display = "block";
+        document.getElementById("projectg-link").href=i.github;
+        document.getElementById("projectg-link").innerText=i.github;
+        document.getElementById("projectg-link").style.fontSize="20px"
+    
+    }
+ 
     if(i.applink){
         
         document.getElementById("app-link-container").style.display="block";

@@ -10,6 +10,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  
+<link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <!-- <link rel="stylesheet" href="./css/font-awesome.min.css"> -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ==" crossorigin="anonymous" /> -->
@@ -26,6 +29,13 @@
 
     <link rel="stylesheet" href="./css/main.css" />
     <style>
+
+        #myElement2 {
+            font-family: 'Roboto' !important;
+    font-weight: 600;
+    font-size: large;
+
+        }
         #home {
             /* width: 200px; */
             /* position: absolute; */
@@ -33,14 +43,21 @@
 
         }
 
+        .navbar-custom{
+            background-color: #353535;
+            border: 0px !important;
+            border-radius: 0px !important;
+        }
 
         #profile-image-sm {
             display: none;
         }
 
         .add-custom-shadow{
-    background:rgb(220, 220, 220);
-    background-image: url("./../assets/images/bg5.png");
+    /* background:rgb(220, 220, 220);
+    background-image: url("./../assets/images/bg5.png"); */
+    background-color: #21D4FD;
+    background:linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)
         }
 
         #defaultCanvas0{
@@ -79,8 +96,8 @@
                 border:none;
             }
             .add-custom-shadow{
-    background:rgb(220, 220, 220);
-    background-image: url("./../assets/images/bg5.png");
+    /* background:rgb(220, 220, 220);
+    background-image: url("./../assets/images/bg5.png"); */
     /* background-blend-mode: soft-light; */
     /* background-size: cover; */
     /* background-attachment: fixed; */
@@ -94,6 +111,7 @@
             #myElement2
             {
                 margin-bottom: 30px;
+                
             }
             #projectContainer{
                 padding-bottom:50px ;
@@ -154,13 +172,13 @@
             }
 
             h1 {
-                font-size: 35px !important;
+                font-size: 50px !important;
+                line-height: 55px !important;
     
-    
-    font-family: 'Roboto' !important;
-    font-weight: bold;
+                font-family:'Rancho' !important;
+    font-weight: 500;
     line-height:45px;
-    color: #787878 !important;
+    color: #1f1f1f !important ;
             }
 
             .lets-connect {
@@ -214,7 +232,7 @@
 <body>
 
 
-    <nav class="navbar navbar-default" style="font-family:'Roboto';font-weight: 600;">
+    <nav class="navbar navbar-default navbar-custom" style="font-family:'Roboto';font-weight: 600;">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -225,7 +243,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" style="font-weight: 600;font-family: 'Roboto';" href="./form.html">prabhuchira@gmail.com</a>
+                <a class="navbar-brand" style="    font-family: 'Roboto';
+                color: white;
+                letter-spacing: 1px;
+                font-size: 16px;;" href="./form.html">prabhuchira@gmail.com</a>
                 <a class="navbar-brand one" href="./form.html"><i class="fa fa-phone"></i></a>
             </div>
             
@@ -287,8 +308,9 @@
                 <h1 id="myElement" class="main-heading"> Web & Mobile App Developer </h1>
                 <br>
 
-                <p id="myElement2">prabhuchira@gmail.com</p>
-
+                <p id="myElement2" style="color:white;letter-spacing:2px; ">prabhuchira@gmail.com</p>
+                
+                <br/>
                 <div>
                     <!-- 
                         <button class="btn btn-default btn-lg btn-cm">
@@ -300,7 +322,7 @@
                           
                         </button> -->
 
-                    <button class="btn btn-default btn-lg btn-cm git-btn">
+                    <button class="btn btn-default btn-lg btn-cm git-btn" style="border:none;box-shadow:none">
                         <a href="#projectContainer" class="fab fa-github soc-icons"></a>
                         <span class="github-text"> Check Out My Projects</span>
                     </button>
@@ -400,6 +422,19 @@
 
                 <div id="projectContainer">
                     <div style="display: flex;" id="projectc">
+                          <div class="project-button">
+                            <figure onclick="window.location.href='./project.html?projectName=jntuh_track'">
+                                <img class="win"
+                                    src="/assets/images/project_thumbs/jntuh_track.png">
+                                <figcaption>
+                                    <div>
+
+                                        <h2>JNTUH Track</h2>
+                                        <button>Visit</button>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
                         <div class="project-button">
                             <figure onclick="window.location.href='./project.html?projectName=calculator'">
                                 <img class="win" src="./assets/images/project_thumbs/calculator.png">
@@ -426,19 +461,7 @@
                                 </figcaption>
                             </figure>
                         </div>
-                        <div class="project-button">
-                            <figure onclick="window.location.href='./project.html?projectName=level'">
-                                <img class="win" src="./assets/images/project_thumbs/level.png">
-                                <figcaption>
-                                    <div>
-
-                                        <h2>Level <span style="font-size: medium;">To do app</span></h2>
-
-                                        <button>Click Me</button>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
+                       
                     </div>
 
 
@@ -471,19 +494,18 @@
                             </figure>
                         </div>
                         <div class="project-button">
-                            <figure onclick="window.location.href='./project.html?projectName=jntuh_track'">
-                                <img class="win"
-                                    src="/assets/images/project_thumbs/jntuh_track.png">
+                            <figure onclick="window.location.href='./project.html?projectName=level'">
+                                <img class="win" src="./assets/images/project_thumbs/level.png">
                                 <figcaption>
                                     <div>
 
-                                        <h2>JNTUH Track</h2>
-                                        <button>Visit</button>
+                                        <h2>Level <span style="font-size: medium;">To do app</span></h2>
+
+                                        <button>Click Me</button>
                                     </div>
                                 </figcaption>
                             </figure>
                         </div>
-                        
                     </div>
 
                     
@@ -621,10 +643,10 @@
             // minWidth: 100.00,
             // maxHeight:100.00,
             // maxWidth:100.00,
-            scale: 0.50,
+            scale:1,
             scaleMobile: 1,
-            color: 0x0,
-            backgroundColor: 0xdcdcdc,
+            color: 0xFFFFFF,
+            backgroundColor: 0xFFFFFF,
             chaos: 3,
             zoom: 0 
 
