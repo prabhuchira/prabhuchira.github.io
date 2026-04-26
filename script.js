@@ -103,6 +103,23 @@
     }, { passive: true });
   }
 
+  var menuToggle = document.getElementById('menuToggle');
+  var headerNav = document.getElementById('headerNav');
+  if (menuToggle && headerNav) {
+    menuToggle.addEventListener('click', function () {
+      var isOpen = headerNav.classList.toggle('is-open');
+      menuToggle.classList.toggle('is-open', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+    navLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        headerNav.classList.remove('is-open');
+        menuToggle.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   // ====== STRAPLINE TYPING EFFECT ======
   var straplineEl = document.getElementById('strapline');
   if (straplineEl) {
