@@ -1,6 +1,7 @@
 :root {
   --orange: #ff4500;
   --orange-dim: #cc3700;
+  --orange-glow: rgba(255, 69, 0, 0.3);
   --surface: #111111;
   --surface-raised: #1a1a1a;
   --text: #f4f4f4;
@@ -13,6 +14,12 @@
   --font-display: 'Archivo Black', sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-theme="cyberpunk"] {
+  --orange: #FCE300;
+  --orange-dim: #d4be00;
+  --orange-glow: rgba(252, 227, 0, 0.3);
 }
 
 *, *::before, *::after {
@@ -429,6 +436,13 @@ body {
   gap: 8px;
 }
 
+.header-col-id {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
 .header-col-actions {
   gap: 24px;
   margin-left: auto;
@@ -461,6 +475,39 @@ body {
   flex-direction: column;
   gap: 5px;
   z-index: 1001;
+}
+
+.theme-toggle {
+  background: var(--surface-raised);
+  border: 2px solid var(--border-solid);
+  border-radius: 20px;
+  width: 48px;
+  height: 26px;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  transition: border-color 0.3s;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  border-color: var(--orange);
+}
+
+.theme-toggle-dot {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff4500;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s;
+}
+
+[data-theme="cyberpunk"] .theme-toggle-dot {
+  transform: translateX(22px);
+  background: #FCE300;
 }
 
 .menu-toggle-bar {
@@ -702,13 +749,13 @@ body {
 }
 
 .hero-line::before {
-  color: var(--white);
+  color: var(--orange);
   z-index: -1;
   animation: glitch-1 4s infinite linear alternate-reverse;
 }
 
 .hero-line::after {
-  color: var(--white);
+  color: var(--orange);
   z-index: -1;
   animation: glitch-2 4s infinite linear alternate-reverse;
   -webkit-text-stroke: 1px var(--black);
@@ -769,7 +816,7 @@ body {
 
 .hero-line--orange {
   color: var(--orange);
-  text-shadow: 0 0 40px rgba(255, 69, 0, 0.3);
+  text-shadow: 0 0 40px var(--orange-glow);
 }
 
 .hero-sub {

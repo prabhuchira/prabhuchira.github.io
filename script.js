@@ -248,8 +248,17 @@
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setClearColor(0x000000, 0);
 
-  var orange = new THREE.Color(0xff4500);
-  var dimOrange = new THREE.Color(0xff4500);
+  function getThemeColors() {
+    var isCyberpunk = document.documentElement.getAttribute('data-theme') === 'cyberpunk';
+    return {
+      orange: isCyberpunk ? 0xFCE300 : 0xff4500,
+      dimOrange: isCyberpunk ? 0xd4be00 : 0xcc3700
+    };
+  }
+
+  var themeColors = getThemeColors();
+  var orange = new THREE.Color(themeColors.orange);
+  var dimOrange = new THREE.Color(themeColors.dimOrange);
   var white = new THREE.Color(0xf4f4f4);
 
   var arcs = [];
@@ -427,4 +436,45 @@
   }
 
   animate();
+
+  document.addEventListener('themechange', function() {
+    var isCyberpunk = document.documentElement.getAttribute('data-theme') === 'cyberpunk';
+    var newOrange = isCyberpunk ? 0xFCE300 : 0xff4500;
+    var newDim = isCyberpunk ? 0xd4be00 : 0xcc3700;
+
+    arcs.forEach(function(a) {
+      var hex = a.mesh.material.color.getHex();
+      if (hex === orange.getHex() || hex === 0xff4500 || hex === 0xFCE300) {
+        a.mesh.material.color.setHex(newOrange);
+      } else if (hex === dimOrange.getHex() || hex === 0xcc3700 || hex === 0xd4be00) {
+        a.mesh.material.color.setHex(newDim);
+      }
+    });
+    dotMat.color.setHex(newOrange);
+    pulseMat.color.setHex(newOrange);
+    pulse2Mat.color.setHex(newOrange);
+    orange.setHex(newOrange);
+    dimOrange.setHex(newDim);
+  });
+})();
+
+// ====== THEME TOGGLE ======
+(function() {
+  var toggle = document.getElementById('themeToggle');
+  var saved = localStorage.getItem('theme');
+  if (saved === 'cyberpunk') {
+    document.documentElement.setAttribute('data-theme', 'cyberpunk');
+  }
+
+  toggle.addEventListener('click', function() {
+    var isCyberpunk = document.documentElement.getAttribute('data-theme') === 'cyberpunk';
+    if (isCyberpunk) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'default');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'cyberpunk');
+      localStorage.setItem('theme', 'cyberpunk');
+    }
+    document.dispatchEvent(new CustomEvent('themechange'));
+  });
 })();
