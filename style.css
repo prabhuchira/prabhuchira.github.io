@@ -225,7 +225,7 @@ html {
 }
 
 .stat-number {
-  display: block;
+  display: inline;
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3.5rem);
   color: var(--orange);
@@ -687,7 +687,61 @@ body {
   transform: translateY(100%);
   will-change: transform, opacity, clip-path;
   animation: heroLineReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  position: relative;
 }
+
+.hero-line::before,
+.hero-line::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.hero-line::before {
+  color: var(--white);
+  z-index: -1;
+  animation: glitch-1 4s infinite linear alternate-reverse;
+}
+
+.hero-line::after {
+  color: var(--white);
+  z-index: -1;
+  animation: glitch-2 4s infinite linear alternate-reverse;
+  -webkit-text-stroke: 1px var(--black);
+  paint-order: stroke fill;
+}
+
+.hero-line:hover::before,
+.hero-line:hover::after {
+  opacity: 0.85;
+}
+
+.hero-line:hover {
+  animation: heroLineReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes glitch-1 {
+  0%, 90%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); opacity: 0; }
+  91% { clip-path: inset(20% 0 55% 0); transform: translate(0, 3px); opacity: 0.85; }
+  92% { clip-path: inset(55% 0 20% 0); transform: translate(0, -2px); opacity: 0.85; }
+  93% { clip-path: inset(10% 0 65% 0); transform: translate(0, 4px); opacity: 0.85; }
+  94% { clip-path: inset(70% 0 10% 0); transform: translate(0, -3px); opacity: 0.85; }
+  95%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); opacity: 0; }
+}
+
+@keyframes glitch-2 {
+  0%, 88%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); opacity: 0; }
+  89% { clip-path: inset(60% 0 15% 0); transform: translate(0, -3px); opacity: 0.85; }
+  90% { clip-path: inset(15% 0 55% 0); transform: translate(0, 2px); opacity: 0.85; }
+  91% { clip-path: inset(75% 0 10% 0); transform: translate(0, -4px); opacity: 0.85; }
+  92%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); opacity: 0; }
+}
+
+
 
 .hero-line:nth-child(1) { animation-delay: 0.2s; }
 .hero-line:nth-child(2) { animation-delay: 0.4s; }

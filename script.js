@@ -7,14 +7,14 @@
     setTimeout(function () {
       if (loader) loader.classList.add('hidden');
       if (pageWrapper) pageWrapper.classList.add('loaded');
-    }, 1200);
+    }, 400);
   });
 
-  // Fallback: hide loader after 4s even if load event is slow
+  // Fallback: hide loader after 2s even if load event is slow
   setTimeout(function () {
     if (loader) loader.classList.add('hidden');
     if (pageWrapper) pageWrapper.classList.add('loaded');
-  }, 4000);
+  }, 2000);
 
   // ====== CUSTOM CURSOR ======
   var cursorDot = document.getElementById('cursorDot');
