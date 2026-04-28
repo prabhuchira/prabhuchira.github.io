@@ -465,6 +465,7 @@
   if (saved === 'cyberpunk') {
     document.documentElement.setAttribute('data-theme', 'cyberpunk');
   }
+  document.dispatchEvent(new CustomEvent('themechange'));
 
   toggle.addEventListener('click', function() {
     var isCyberpunk = document.documentElement.getAttribute('data-theme') === 'cyberpunk';

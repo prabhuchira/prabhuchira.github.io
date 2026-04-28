@@ -2,6 +2,9 @@
   --orange: #ff4500;
   --orange-dim: #cc3700;
   --orange-glow: rgba(255, 69, 0, 0.3);
+  --orange-subtle-bg: rgba(255, 69, 0, 0.08);
+  --orange-subtle-border: rgba(255, 69, 0, 0.2);
+  --orange-faint: rgba(255, 69, 0, 0.04);
   --surface: #111111;
   --surface-raised: #1a1a1a;
   --text: #f4f4f4;
@@ -20,6 +23,9 @@
   --orange: #FCE300;
   --orange-dim: #d4be00;
   --orange-glow: rgba(252, 227, 0, 0.3);
+  --orange-subtle-bg: rgba(252, 227, 0, 0.08);
+  --orange-subtle-border: rgba(252, 227, 0, 0.2);
+  --orange-faint: rgba(252, 227, 0, 0.04);
 }
 
 *, *::before, *::after {
@@ -501,14 +507,15 @@ body {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #ff4500;
+  background: var(--orange);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s;
 }
 
 [data-theme="cyberpunk"] .theme-toggle-dot {
   transform: translateX(22px);
-  background: #FCE300;
 }
+
+
 
 .menu-toggle-bar {
   display: block;
@@ -1204,7 +1211,7 @@ body {
 }
 
 .exp-item--highlight {
-  background: linear-gradient(135deg, rgba(255,69,0,0.04), transparent);
+  background: linear-gradient(135deg, var(--orange-faint), transparent);
 }
 
 .exp-item-inner {
@@ -1274,8 +1281,8 @@ body {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   color: var(--orange);
-  background: rgba(255, 69, 0, 0.08);
-  border: 1px solid rgba(255, 69, 0, 0.2);
+  background: var(--orange-subtle-bg);
+  border: 1px solid var(--orange-subtle-border);
   padding: 4px 14px;
   white-space: nowrap;
   font-weight: 600;
@@ -1477,6 +1484,26 @@ body {
 /* ====== CTA ====== */
 .section-cta {
   background: var(--surface-raised);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  width: 700px;
+  height: 700px;
+  transform: translateY(-50%);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='rgba(180,180,190,0.08)' stroke-width='1.5'%3E%3Ccircle cx='100' cy='100' r='60'/%3E%3Ccircle cx='100' cy='100' r='40'/%3E%3Ccircle cx='100' cy='100' r='20'/%3E%3Ccircle cx='100' cy='82' r='8'/%3E%3Ccircle cx='117' cy='92' r='8'/%3E%3Ccircle cx='117' cy='108' r='8'/%3E%3Ccircle cx='100' cy='118' r='8'/%3E%3Ccircle cx='83' cy='108' r='8'/%3E%3Ccircle cx='83' cy='92' r='8'/%3E%3Cline x1='100' y1='30' x2='100' y2='55'/%3E%3Cline x1='100' y1='145' x2='100' y2='170'/%3E%3Cline x1='30' y1='100' x2='55' y2='100'/%3E%3Cline x1='145' y1='100' x2='170' y2='100'/%3E%3Cline x1='50.5' y1='50.5' x2='68' y2='68'/%3E%3Cline x1='132' y1='132' x2='149.5' y2='149.5'/%3E%3Cline x1='149.5' y1='50.5' x2='132' y2='68'/%3E%3Cline x1='68' y1='132' x2='50.5' y2='149.5'/%3E%3C/svg%3E") center/contain no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-cta .cta-content {
+  position: relative;
+  z-index: 1;
 }
 
 .cta-content {
