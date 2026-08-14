@@ -14,6 +14,7 @@
     rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projects/project.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 
@@ -55,6 +56,7 @@
           <a href="#skills" class="nav-link" data-section="skills">Skills</a>
           <a href="#experience" class="nav-link" data-section="experience">Experience</a>
           <a href="#awards" class="nav-link" data-section="awards">Awards</a>
+          <a href="#projects" class="nav-link" data-section="projects">Projects</a>
           <a href="#contact" class="nav-link" data-section="contact">Contact</a>
         </div>
         <div class="header-col-actions">
@@ -393,10 +395,32 @@
       </div>
     </section>
 
+    <!-- PROJECTS -->
+    <section class="section-bordered" id="projects">
+      <div class="section-header-bar" data-animate>
+        <span class="text-orange">05</span> <span class="section-label">Projects</span>
+      </div>
+      <div class="projects-grid">
+        <a href="projects/minilab3-pad-visualizer/" class="project-card" data-animate="fade-up" data-delay="1">
+          <div class="project-card-top">
+            <h3 class="font-display">MiniLab 3 Pad Visualizer</h3>
+            <span class="project-card-arrow">&#8599;</span>
+          </div>
+          <p>Turns the 8 RGB pads on an Arturia MiniLab 3 into an animated light show &mdash; 16 modes driven
+            over MIDI SysEx at ~25 fps, six of them reacting live to whatever the DAW is playing. LEDs only, so
+            it never interferes with playing or recording.</p>
+          <div class="skill-tags">
+            <span>Python</span><span>MIDI SysEx</span><span>FFT / DSP</span><span>NumPy</span><span>Open
+              Source</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
     <!-- EDUCATION + INTERESTS -->
     <section class="section-bordered" id="education">
       <div class="section-header-bar" data-animate>
-        <span class="text-orange">05</span> <span class="section-label">Education &amp; Interests</span>
+        <span class="text-orange">06</span> <span class="section-label">Education &amp; Interests</span>
       </div>
       <div class="edu-grid">
         <div class="edu-col" data-animate="fade-right" data-delay="1">
@@ -418,7 +442,7 @@
     <!-- CONTACT / CTA -->
     <section class="section-bordered section-cta" id="contact">
       <div class="section-header-bar" data-animate>
-        <span class="text-orange">06</span> <span class="section-label">Connect</span>
+        <span class="text-orange">07</span> <span class="section-label">Connect</span>
       </div>
       <div class="cta-content">
         <h2 class="font-display cta-title uppercase" data-animate="fade-up" data-delay="1">Let's<br />Build<br /><span

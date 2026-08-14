@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniLab 3 Pad Visualizer | Ch Prabhu Kumar</title>
+  <meta name="description"
+    content="A Python light show for the Arturia MiniLab 3 — 16 animation modes driving the 8 RGB pads over MIDI SysEx, including audio-reactive modes that follow whatever the DAW is playing.">
+  <link rel="canonical" href="https://prabhuchira.github.io/projects/minilab3-pad-visualizer/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MiniLab 3 Pad Visualizer">
+  <meta property="og:description"
+    content="Turn the 8 RGB pads on an Arturia MiniLab 3 into an animated, audio-reactive light show — LEDs only, so it runs alongside Logic Pro without touching your notes.">
+  <meta property="og:url" content="https://prabhuchira.github.io/projects/minilab3-pad-visualizer/">
+  <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../project.css">
+</head>
+
+<body>
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-bar"></div>
+      <div class="loader-text font-display">PK</div>
+    </div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&uarr;</button>
+
+  <div class="noise-overlay"></div>
+  <div class="grid-bg"></div>
+
+  <div class="page-wrapper" id="pageWrapper">
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+      <div class="header-col header-col-id">
+        <span class="text-orange">N&#186;</span> PK
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
+          <span class="theme-toggle-dot" id="themeDot"></span>
+        </button>
+      </div>
+      <nav class="header-col header-col-nav" id="headerNav">
+        <div class="nav-links">
+          <a href="../../index.html" class="nav-link">&#8592; Home</a>
+          <a href="../../index.html#projects" class="nav-link">Projects</a>
+          <a href="../../index.html#about" class="nav-link">About</a>
+          <a href="../../index.html#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="header-col-actions">
+          <a href="https://github.com/prabhuchira/minilab3-pad-visualizer" target="_blank"
+            rel="noopener noreferrer" class="text-orange hover-white">Repo</a>
+          <a href="mailto:prabhuchira@gmail.com" class="text-orange hover-white">Email</a>
+          <a href="https://github.com/prabhuchira" target="_blank" rel="noopener noreferrer"
+            class="text-orange hover-white">GitHub</a>
+          <a href="https://linkedin.com/in/pkumar1999" target="_blank" rel="noopener noreferrer"
+            class="text-orange hover-white">LinkedIn</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+    </header>
+
+    <!-- HERO -->
+    <section class="proj-hero">
+      <div class="proj-hero-inner">
+        <div class="proj-eyebrow">
+          <span>Project 01</span> <span class="dot">/</span> <span>Python &middot; MIDI &middot; DSP</span>
+          <span class="dot">/</span> <span>2026</span>
+        </div>
+        <h1 class="proj-title">
+          MiniLab 3<br /><span class="line-orange">Pad Visualizer</span>
+        </h1>
+        <p class="proj-lede">
+          Turn the 8 RGB pads on an Arturia MiniLab 3 into an animated light show. A small Python script
+          paints the pad LEDs at ~25&nbsp;fps over MIDI SysEx &mdash; purely as lighting. It never sends notes
+          or CCs, so it runs happily alongside Logic Pro without touching what you play or record. Six of the
+          modes listen to live audio and follow whatever the DAW is actually playing.
+        </p>
+        <div class="proj-actions">
+          <a href="https://github.com/prabhuchira/minilab3-pad-visualizer" target="_blank"
+            rel="noopener noreferrer" class="btn-proj">View on GitHub &#8599;</a>
+          <a href="#how" class="btn-proj btn-proj--ghost">How it works &#8595;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- META STRIP -->
+    <div class="proj-meta">
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Role</span>
+        <span class="proj-meta-value">Solo build &mdash; design &amp; direction</span>
+      </div>
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Stack</span>
+        <span class="proj-meta-value">Python &middot; mido &middot; NumPy &middot; sounddevice</span>
+      </div>
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Modes</span>
+        <span class="proj-meta-value">16 &mdash; 6 audio-reactive</span>
+      </div>
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Status</span>
+        <span class="proj-meta-value text-orange">Open source &middot; MIT</span>
+      </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section class="section-bordered" id="overview">
+      <div class="section-header-bar" data-animate>
+        <span class="text-orange">01</span> <span class="section-label">Overview</span>
+      </div>
+      <div class="proj-body" data-animate="fade-up" data-delay="1">
+        <p>
+          The MiniLab 3 ships with eight velocity pads that light up &mdash; and nothing interesting to do with
+          those lights. Arturia never documented the protocol, but the community reverse-engineered the SysEx
+          command from Arturia's own DAW integration scripts. That is the whole hook this project hangs on:
+          one message per LED, sent fast enough to animate.
+        </p>
+        <p>
+          The result is a command-line light show. Pick a mode, pick a tempo or a brightness, and the pads run
+          an animation until you stop it. <strong>The design constraint that shaped everything: the script must
+          be invisible to the DAW.</strong> It writes to LEDs only &mdash; never notes, never CCs &mdash; so the
+          keyboard keeps playing into Logic Pro normally while the show runs on top.
+        </p>
+        <div class="proj-code"><span class="cmt"># rainbow wave (default)</span>
+.venv/bin/python pad_visualizer.py
+
+<span class="cmt"># tempo-synced step sequencer at 128 BPM</span>
+.venv/bin/python pad_visualizer.py sequencer --tempo 128
+
+<span class="cmt"># eight-band analyzer following live audio</span>
+.venv/bin/python pad_visualizer.py spectrum</div>
+        <p>
+          Ctrl+C restores every pad to its default grey on the way out.
+        </p>
+      </div>
+    </section>
+
+    <!-- MODES -->
+    <section class="section-bordered" id="modes">
+      <div class="section-header-bar" data-animate>
+        <span class="text-orange">02</span> <span class="section-label">Sixteen Modes, Three Families</span>
+      </div>
+      <div class="mode-grid">
+        <div class="mode-card" data-animate="fade-up" data-delay="1">
+          <h3>Free-running</h3>
+          <p>
+            Pure functions of time. Smooth hue waves, chunky 8-bit marquees, neon glitch storms &mdash; each one
+            is a small function that takes elapsed seconds and returns eight colors.
+          </p>
+          <div class="mode-tags">
+            <span>rainbow</span><span>breathe</span><span>sparkle</span><span>chase</span><span>retro</span><span>synthwave</span><span>cyberpunk</span>
+          </div>
+        </div>
+        <div class="mode-card" data-animate="fade-up" data-delay="2">
+          <h3>Tempo-synced</h3>
+          <p>
+            Driven by a beat clock at whatever BPM you pass in. The sequencer maps the eight pads to one 4/4 bar
+            of eighth notes; pulse flashes the whole row on the beat and hits harder on the downbeat.
+          </p>
+          <div class="mode-tags"><span>sequencer</span><span>pulse</span></div>
+        </div>
+        <div class="mode-card" data-animate="fade-up" data-delay="3">
+          <h3>Audio-reactive</h3>
+          <p>
+            Listening to real sound instead of a number you typed. Spectrum analyzers, VU meters, transient
+            flashes, and rings of light that expand from the centre on every hit.
+          </p>
+          <div class="mode-tags">
+            <span>spectrum</span><span>vu</span><span>beat</span><span>prism</span><span>ripple</span><span>shatter</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section-bordered" id="how">
+      <div class="section-header-bar" data-animate>
+        <span class="text-orange">03</span> <span class="section-label">How It Works</span>
+      </div>
+      <div class="proj-body" data-animate="fade-up" data-delay="1">
+        <h2 class="proj-h3">Talking to the hardware</h2>
+        <p>
+          Each pad LED is set by a single SysEx message. Colors are 7-bit per channel &mdash; 0x00 to 0x7F, not
+          0&ndash;255 &mdash; which is its own small design constraint when you are mixing gradients.
+        </p>
+        <div class="proj-code">F0 00 20 6B 7F 42 02 02 16 &lt;pad_id&gt; &lt;rr&gt; &lt;gg&gt; &lt;bb&gt; F7
+&#9492;&#9508; &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496; &#9492;&#9472;&#9472;&#9516;&#9472;&#9472;&#9496;   &#9474;      &#9492;&#9472;&#9472; 7-bit RGB
+ &#9474;     Arturia header  set     &#9474;
+ &#9474;                     color   &#9492;&#9472;&#9472; which LED
+ &#9492;&#9472;&#9472; SysEx start / end</div>
+        <p>
+          The render loop auto-detects the <code>Minilab3 MIDI</code> port, renders each frame as eight RGB
+          tuples, and pushes them to <strong>both</strong> pad banks so the show is visible whichever bank is
+          active on the device. On exit it restores the default grey.
+        </p>
+        <p>
+          Logic's own MiniLab integration occasionally repaints the pads when you switch tracks. At ~25 frames
+          a second the animation paints straight over it &mdash; worst case you see a single frame flicker.
+        </p>
+
+        <h2 class="proj-h3">Making it hear the music</h2>
+        <p>
+          On macOS the audio modes capture system output through the free
+          <a href="https://existential.audio/blackhole/" target="_blank" rel="noopener noreferrer">BlackHole</a>
+          loopback driver, so they hear the DAW rather than the room. Capture runs at 44.1&nbsp;kHz in
+          512-sample blocks; each frame takes the newest 1024 samples, applies a Hann window and an FFT, and
+          folds the result into 8 log-spaced bands from 40&nbsp;Hz to 16&nbsp;kHz &mdash; log spacing so the bass
+          gets pads of its own instead of crowding into one.
+        </p>
+        <p>
+          Two bits of conditioning do most of the work in making it <em>look</em> right:
+        </p>
+        <ul>
+          <li>
+            <strong>Asymmetric smoothing</strong> &mdash; fast attack, slow release. Raw FFT values jitter every
+            frame and read as noise on an LED; this makes hits snap in and glows fall away.
+          </li>
+          <li>
+            <strong>Per-band auto-gain</strong> &mdash; each band normalises against a slowly decaying running
+            peak, so a quiet passage and a loud one both fill the pads without touching a gain flag. A floor
+            keeps silence dark rather than amplifying hiss.
+          </li>
+        </ul>
+        <p>
+          The transient modes detect hits with spectral flux against an adaptive threshold, plus a 120&nbsp;ms
+          refractory period so one kick doesn't fire three times. End-to-end latency lands around
+          50&ndash;75&nbsp;ms &mdash; comfortably below the point where light lag starts to look wrong.
+        </p>
+
+        <h2 class="proj-h3">Built to be extended</h2>
+        <p>
+          A new theme is one function and one dict entry. Take elapsed time, brightness and beat position;
+          return eight <code>(r, g, b)</code> tuples. Audio modes read a shared analyzer object instead of
+          taking extra arguments, so the signature never changes. NumPy and sounddevice stay lazily imported,
+          which keeps every non-audio mode running on <code>mido</code> alone.
+        </p>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="section-bordered" id="roadmap">
+      <div class="section-header-bar" data-animate>
+        <span class="text-orange">04</span> <span class="section-label">What's Next</span>
+      </div>
+      <div class="awards-grid-ref">
+        <div class="award-ref-card" data-animate="award-ref-card" data-delay="1">
+          <span class="text-orange text-xs uppercase tracking-widest">Sync</span>
+          <h3 class="font-display text-xl sm:text-2xl uppercase mt-2">MIDI Clock Lock</h3>
+          <p class="mt-2">Follow the DAW's clock and transport so the tempo-synced modes phase-lock to the
+            project instead of free-running from the moment you hit enter.</p>
+        </div>
+        <div class="award-ref-card award-ref-card--orange" data-animate="award-ref-card" data-delay="2">
+          <span class="text-black text-xs uppercase tracking-widest">Next Build</span>
+          <h3 class="font-display text-xl sm:text-2xl uppercase mt-2">Zero-Install Web App</h3>
+          <p class="mt-2 text-black/80">A WebMIDI version with a theme picker, tap tempo and live pad preview,
+            plus device profiles for other controllers. There is currently no device-agnostic pad light show
+            app out there &mdash; the niche is open.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDITS / CTA -->
+    <section class="section-bordered section-cta" id="credits">
+      <div class="section-header-bar" data-animate>
+        <span class="text-orange">05</span> <span class="section-label">Credits &amp; Contact</span>
+      </div>
+      <div class="proj-body" data-animate="fade-up" data-delay="1">
+        <p>
+          SysEx protocol reverse-engineered by the community from Arturia's Bitwig integration scripts &mdash;
+          thanks to
+          <a href="https://gist.github.com/Janiczek/04a87c2534b9d1435a1d8159c742d260" target="_blank"
+            rel="noopener noreferrer">@Janiczek's gist</a> and the Arturia forum threads on pad LED control.
+          Not affiliated with or endorsed by Arturia. Released under the MIT license.
+        </p>
+        <p>
+          Built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude
+            Code</a>: Claude wrote most of the Python, I set the direction &mdash; which modes to build, how
+          each one should look, and the calls on color and motion that only someone watching the actual pads
+          could make.
+        </p>
+        <div class="proj-actions">
+          <a href="https://github.com/prabhuchira/minilab3-pad-visualizer" target="_blank"
+            rel="noopener noreferrer" class="btn-proj">Clone the repo &#8599;</a>
+          <a href="mailto:prabhuchira@gmail.com" class="btn-proj btn-proj--ghost">Get in touch &#8599;</a>
+        </div>
+        <p style="margin-top:32px;">
+          <a href="../../index.html" class="proj-back">&#8592; Back to portfolio</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" data-animate="fade-up">
+      <div class="footer-cell"><a href="mailto:prabhuchira@gmail.com">Email</a></div>
+      <div class="footer-cell"><a href="https://github.com/prabhuchira" target="_blank"
+          rel="noopener noreferrer">GitHub</a></div>
+      <div class="footer-cell"><a href="https://linkedin.com/in/pkumar1999" target="_blank"
+          rel="noopener noreferrer">LinkedIn</a></div>
+      <div class="footer-cell footer-cell--orange"><a href="tel:+919618723780">Call</a></div>
+    </footer>
+  </div>
+
+  <script src="../../script.js"></script>
+</body>
+
+</html>
