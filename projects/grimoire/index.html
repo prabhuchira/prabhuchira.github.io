@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grimoire &mdash; A Notes App With a Sense of Place | Ch Prabhu Kumar</title>
+  <meta name="description"
+    content="Grimoire is a dark academia notes and journaling app — nine atmospheric worlds with living backgrounds and procedural soundscapes, local-first, offline, installable. Built with Next.js and shipped to web, iOS and Android.">
+  <link rel="canonical" href="https://prabhuchira.github.io/projects/grimoire/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Grimoire — A Notes App With a Sense of Place">
+  <meta property="og:description"
+    content="A dark academia notes app: nine photographic worlds, living particle backdrops, soundscapes synthesized live in the browser. Local-first, offline, installable.">
+  <meta property="og:url" content="https://prabhuchira.github.io/projects/grimoire/">
+  <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../project.css">
+</head>
+
+<body>
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-bar"></div>
+      <div class="loader-text font-display">PK</div>
+    </div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&uarr;</button>
+
+  <div class="noise-overlay"></div>
+  <div class="grid-bg"></div>
+
+  <div class="page-wrapper" id="pageWrapper">
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+      <div class="header-col header-col-id">
+        <span class="text-orange">N&#186;</span> PK
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
+          <span class="theme-toggle-dot" id="themeDot"></span>
+        </button>
+      </div>
+      <nav class="header-col header-col-nav" id="headerNav">
+        <div class="nav-links">
+          <a href="../../index.html" class="nav-link">&#8592; Home</a>
+          <a href="../../index.html#projects" class="nav-link">Projects</a>
+          <a href="../../index.html#about" class="nav-link">About</a>
+          <a href="../../index.html#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="header-col-actions">
+          <a href="https://grimoirenotes.app/" target="_blank" rel="noopener noreferrer"
+            class="text-orange hover-white">Live App</a>
+          <a href="mailto:prabhuchira@gmail.com" class="text-orange hover-white">Email</a>
+          <a href="https://github.com/prabhuchira" target="_blank" rel="noopener noreferrer"
+            class="text-orange hover-white">GitHub</a>
+          <a href="https://linkedin.com/in/pkumar1999" target="_blank" rel="noopener noreferrer"
+            class="text-orange hover-white">LinkedIn</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+    </header>
+
+    <!-- HERO -->
+    <section class="proj-hero">
+      <div class="proj-hero-inner">
+        <div class="proj-eyebrow">
+          <span>&#10086; Project 02</span> <span class="dot">/</span> <span>Next.js &middot; PWA &middot; Web
+            Audio</span> <span class="dot">/</span> <span>2026</span>
+        </div>
+        <h1 class="proj-title">
+          Grimoire<br /><span class="line-orange">A Sense of Place</span>
+        </h1>
+        <p class="proj-lede">
+          A notes app with a sense of place. Most notes apps are a white rectangle and a blinking cursor;
+          Grimoire drops you into a world instead &mdash; a candlelit desk, the deep sea at night, an
+          alchemist's bench. Nine photographic scenes, each with drifting particles, breathing light, and a
+          soundscape synthesized live in the browser. Your words save themselves, stay on your device by
+          default, and need no account to begin.
+        </p>
+        <div class="proj-actions">
+          <a href="https://grimoirenotes.app/" target="_blank" rel="noopener noreferrer" class="btn-proj">Open
+            grimoirenotes.app &#8599;</a>
+          <a href="#worlds" class="btn-proj btn-proj--ghost">See the worlds &#8595;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- META STRIP -->
+    <div class="proj-meta">
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Role</span>
+        <span class="proj-meta-value">Solo &mdash; product, design &amp; build</span>
+      </div>
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Stack</span>
+        <span class="proj-meta-value">Next.js &middot; TypeScript &middot; Tiptap &middot; Supabase &middot;
+          Capacitor</span>
+      </div>
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Platforms</span>
+        <span class="proj-meta-value">Web PWA &middot; iOS &middot; Android</span>
+      </div>
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Status</span>
+        <span class="proj-meta-value text-orange">Live &middot; grimoirenotes.app</span>
+      </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section class="section-bordered" id="overview">
+      <div class="section-header-bar" data-animate>
+        <span class="text-orange">01</span> <span class="section-label">Overview</span>
+      </div>
+      <div class="proj-body" data-animate="fade-up" data-delay="1">
+        <p>
+          Grimoire is a note-taking and journaling app that treats writing as an <strong>atmosphere, not a
+            chore</strong>. The product bet is simple: people don't abandon their notes app because it lacks
+          features &mdash; they abandon it because sitting down to write in it feels like opening a spreadsheet.
+          So the app leads with mood. You pick a world, the room settles around you, and the writing surface is
+          the calmest thing on screen.
+        </p>
+        <p>
+          Everything underneath is built to keep that promise honest. Notes are <strong>local-first</strong> and
+          save as you type, so there is no account wall and no spinner between a thought and the page. The app
+          installs to a home screen and works with the network off. Cloud sync exists, but only if you ask for
+          it &mdash; and when it runs, it does a conflict-safe three-way merge rather than letting the last
+          device to wake up overwrite your day.
+        </p>
+        <p>
+          It ships as one codebase to three places: the web app, and iOS and Android builds that wrap the same
+          static export in a native shell. Not a port, not a rewrite &mdash; the same engine the browser build
+          already targets, which sets the bar that the phone app has to be as good as the web one rather than
+          merely shipped.
+        </p>
+      </div>
+    </section>
+
+    <!-- WORLDS -->
+    <section class="section-bordered" id="worlds">
+      <div class="section-header-bar" data-animate>
+        <span class="text-orange">02</span> <span class="section-label">Nine Worlds</span>
+      </div>
+      <div class="proj-body" data-animate="fade-up" data-delay="1">
+        <p>
+          Each world is a full scene, not a color scheme: a photographic backdrop, its own palette and light, and
+          a living particle layer that drifts with a subtle parallax as the cursor moves. Eight of the nine are
+          pale text in a dark room lit by a single warm or cool source. One &mdash; <em>Ancient</em> &mdash;
+          inverts everything into sepia ink on sunlit vellum.
+        </p>
+      </div>
+      <div class="world-grid">
+        <div class="world-card" data-animate="fade-up" data-delay="1">
+          <span class="world-swatch" style="--accent:#c3a15b; background:#1e1710;"></span>
+          <div>
+            <h3 class="world-name">Dark Academia</h3>
+            <p class="world-mood">Candlelit study, warm hearth, old books. The default room.</p>
+            <span class="world-layer">Dust motes in candlelight</span>
+          </div>
+        </div>
+        <div class="world-card" data-animate="fade-up" data-delay="1">
+          <span class="world-swatch" style="--accent:#6fb0c4; background:#142131;"></span>
+          <div>
+            <h3 class="world-name">Ocean</h3>
+            <p class="world-mood">Sunlit deep water, moving caustics.</p>
+            <span class="world-layer">Glowing plankton adrift</span>
+          </div>
+        </div>
+        <div class="world-card" data-animate="fade-up" data-delay="2">
+          <span class="world-swatch" style="--accent:#cc9a52; background:#101b29;"></span>
+          <div>
+            <h3 class="world-name">Ocean &middot; Night</h3>
+            <p class="world-mood">Moonlit sea, cold swell, a brass lamp at the edge.</p>
+            <span class="world-layer">Night plankton, kindling flashes</span>
+          </div>
+        </div>
+        <div class="world-card" data-animate="fade-up" data-delay="2">
+          <span class="world-swatch" style="--accent:#8fa25e; background:#1a2213;"></span>
+          <div>
+            <h3 class="world-name">Forest</h3>
+            <p class="world-mood">Dappled canopy light, deep moss green.</p>
+            <span class="world-layer">Pollen on the breeze</span>
+          </div>
+        </div>
+        <div class="world-card" data-animate="fade-up" data-delay="3">
+          <span class="world-swatch" style="--accent:#5fb03e; background:#1b1a12;"></span>
+          <div>
+            <h3 class="world-name">Alchemist's Lab</h3>
+            <p class="world-mood">A dark bench lit from below by a glowing brew.</p>
+            <span class="world-layer">Embers lifting into vapour</span>
+          </div>
+        </div>
+        <div class="world-card" data-animate="fade-up" data-delay="3">
+          <span class="world-swatch" style="--accent:#8a8fd8; background:#111426;"></span>
+          <div>
+            <h3 class="world-name">Deep Space</h3>
+            <p class="world-mood">Indigo cosmos, nebula haze, starlight violet.</p>
+            <span class="world-layer">Starfield with shooting stars</span>
+          </div>
+        </div>
+        <div class="world-card" data-animate="fade-up" data-delay="4">
+          <span class="world-swatch" style="--accent:#d081aa; background:#1c1226;"></span>
+          <div>
+            <h3 class="world-name">Sakura</h3>
+            <p class="world-mood">Night-blooming cherry against a plum-violet sky.</p>
+            <span class="world-layer">Petals falling on the night air</span>
+          </div>
+        </div>
+        <div class="world-card" data-animate="fade-up" data-delay="4">
+          <span class="world-swatch" style="--accent:#9d7c4f; background:#12141b;"></span>
+          <div>
+            <h3 class="world-name">Sherlock</h3>
+            <p class="world-mood">Fog-bound Victorian London under gaslamp brass.</p>
+            <span class="world-layer">Fog motes, cold moon</span>
+          </div>
+        </div>
+        <div class="world-card" data-animate="fade-up" data-delay="5">
+          <span class="world-swatch" style="--accent:#9a7530; background:#e7dabb;"></span>
+          <div>
+            <h3 class="world-name">Ancient</h3>
+            <p class="world-mood">The one daylit world &mdash; sun on old vellum, gilt and sepia ink.</p>
+            <span class="world-layer">Dust in a sunbeam</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IT DOES -->
+    <section class="section-bordered" id="features">
+      <div class="section-header-bar" data-animate>
+        <span class="text-orange">03</span> <span class="section-label">What It Does</span>
+      </div>
+      <div class="mode-grid">
+        <div class="mode-card" data-animate="fade-up" data-delay="1">
+          <h3>Writing</h3>
+          <p>
+            A distraction-free rich-text page that saves itself as you type. Select text and a floating
+            formatting menu rises; the column holds a reading measure by default, or goes full width, with font
+            size and line height to taste.
+          </p>
+          <div class="mode-tags">
+            <span>autosave</span><span>floating menu</span><span>reading measure</span>
+          </div>
+        </div>
+        <div class="mode-card" data-animate="fade-up" data-delay="2">
+          <h3>Keeping</h3>
+          <p>
+            An archive of everything you've written, newest first, with tags surfaced above the list and instant
+            search across titles and body as you type. A command palette jumps to any page &mdash; or back to
+            where you left off.
+          </p>
+          <div class="mode-tags">
+            <span>archive</span><span>tags</span><span>instant search</span><span>&#8984;K palette</span>
+          </div>
+        </div>
+        <div class="mode-card" data-animate="fade-up" data-delay="3">
+          <h3>The Journal</h3>
+          <p>
+            Turn the desk from notes to journal and you get one dated page per day, a calendar of entries,
+            &ldquo;on this day&rdquo; echoes from past years, and a streak flame counting consecutive days. One
+            archive underneath, one shelf at a time on top.
+          </p>
+          <div class="mode-tags">
+            <span>dated pages</span><span>calendar</span><span>streak</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNDER THE HOOD -->
+    <section class="section-bordered" id="how">
+      <div class="section-header-bar" data-animate>
+        <span class="text-orange">04</span> <span class="section-label">Under the Hood</span>
+      </div>
+      <div class="proj-body" data-animate="fade-up" data-delay="1">
+        <h2 class="proj-h3">Sound with no sound files</h2>
+        <p>
+          Every world has an ambience &mdash; fire crackle, surf, rain, wind, a cosmic hum, a bubbling brew
+          &mdash; and none of it ships as audio. It is all synthesized live with the Web Audio API and
+          crossfades when you move between worlds, which keeps the bundle small and means the loop never
+          audibly repeats. It is opt-in, with its own volume, because a notes app that makes noise by default
+          is a notes app people close.
+        </p>
+
+        <h2 class="proj-h3">A backdrop that is alive but polite</h2>
+        <p>
+          The particle layer is a canvas of world-appropriate motes &mdash; dust, plankton, embers, pollen,
+          petals, shooting stars &mdash; over a glow that slowly breathes, with a parallax depth split driven by
+          the cursor. It also knows when to stop: <strong>reduced-motion and animation preferences are honored
+            throughout</strong>, and with motion off the scene simply holds still and glows.
+        </p>
+
+        <h2 class="proj-h3">Local-first, sync second</h2>
+        <p>
+          Notes live in the browser, so the app is usable in the first second and offline forever. Sync is
+          opt-in, authenticated by an emailed code that works inside the installed app, and merges three ways
+          against a common ancestor &mdash; the device that woke up last does not get to erase the one you were
+          actually writing on.
+        </p>
+
+        <h2 class="proj-h3">One codebase, three stores</h2>
+        <p>
+          The iOS and Android builds wrap the app's static export in a native shell and serve it locally, on the
+          same webview engines the browser build already targets. Payments for the optional Patron tier run
+          through a merchant-of-record, so nothing essential is ever gated &mdash; the app is free to use, and
+          the tier buys extras like a clean share card.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-bordered section-cta" id="visit">
+      <div class="section-header-bar" data-animate>
+        <span class="text-orange">05</span> <span class="section-label">See It Yourself</span>
+      </div>
+      <div class="proj-body" data-animate="fade-up" data-delay="1">
+        <p>
+          Grimoire is live and free to start &mdash; no account, no download, nothing to configure. Open it,
+          pick a world, and write a line. Source is closed; if you'd like to talk about how any of it is built,
+          get in touch.
+        </p>
+        <div class="proj-actions">
+          <a href="https://grimoirenotes.app/" target="_blank" rel="noopener noreferrer" class="btn-proj">Open
+            grimoirenotes.app &#8599;</a>
+          <a href="mailto:prabhuchira@gmail.com" class="btn-proj btn-proj--ghost">Get in touch &#8599;</a>
+        </div>
+        <p style="margin-top:32px;">
+          <a href="../../index.html" class="proj-back">&#8592; Back to portfolio</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" data-animate="fade-up">
+      <div class="footer-cell"><a href="mailto:prabhuchira@gmail.com">Email</a></div>
+      <div class="footer-cell"><a href="https://github.com/prabhuchira" target="_blank"
+          rel="noopener noreferrer">GitHub</a></div>
+      <div class="footer-cell"><a href="https://linkedin.com/in/pkumar1999" target="_blank"
+          rel="noopener noreferrer">LinkedIn</a></div>
+      <div class="footer-cell footer-cell--orange"><a href="tel:+919618723780">Call</a></div>
+    </footer>
+  </div>
+
+  <script src="../../script.js"></script>
+</body>
+
+</html>

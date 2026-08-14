@@ -316,6 +316,92 @@
   }
 }
 
+/* ---- worlds / palette grid ---- */
+.world-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-bottom: 1px solid var(--border);
+}
+
+.world-card {
+  padding: 20px 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  transition: background 0.3s;
+}
+
+.world-card:hover {
+  background: var(--surface-raised);
+}
+
+.world-swatch {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-solid);
+  position: relative;
+  overflow: hidden;
+}
+
+.world-swatch::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 32% 30%, var(--accent), transparent 62%);
+}
+
+.world-name {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+
+.world-mood {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.world-layer {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-top: 6px;
+}
+
+@media (min-width: 640px) {
+  .world-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .world-card:nth-child(odd) {
+    border-right: 1px solid var(--border);
+  }
+}
+
+@media (min-width: 1024px) {
+  .world-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .world-card {
+    padding: 24px 32px;
+    border-right: 1px solid var(--border);
+  }
+
+  .world-card:nth-child(3n) {
+    border-right: none;
+  }
+}
+
 /* ====== PROJECTS SECTION (home page) ====== */
 .projects-grid {
   display: grid;
